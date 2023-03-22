@@ -2,7 +2,15 @@ package com.am.petshop.user.model;
 
 
 import jakarta.persistence.*;
+import lombok.*;
 
+import java.time.LocalDate;
+
+@Setter
+@Getter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "users")
 public class User {
@@ -22,5 +30,6 @@ public class User {
 	private String password;
 	@Column(name = "phone", length = 12, nullable = false)
 	private String phone;
-
+	@Column(name = "creationDate")
+	private LocalDate localDate;
 }
